@@ -1,24 +1,225 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Add RecordVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AddRecordVC" customModule="RealmApp2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="0Or-p7-BrB">
+                                <rect key="frame" x="10" y="194" width="394" height="234"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QUp-yl-RGy">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ptd-32-fxz">
+                                        <rect key="frame" x="0.0" y="50" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Employee Id" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Shf-pL-qQM">
+                                        <rect key="frame" x="0.0" y="100" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gc9-b4-2IU">
+                                        <rect key="frame" x="0.0" y="150" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VCS-b3-dBl">
+                                        <rect key="frame" x="0.0" y="200" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="9Vy-C7-hd4">
+                                <rect key="frame" x="140" y="478" width="134" height="95"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K25-0J-mg4">
+                                        <rect key="frame" x="0.0" y="0.0" width="134" height="39"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Save record">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qqa-u8-jC4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYS-31-dbQ">
+                                        <rect key="frame" x="0.0" y="57" width="134" height="38"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="Show records">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showRecords:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ivC-Bh-Y8Q"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMPLOYEE DATABASE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAW-UN-TfN">
+                                <rect key="frame" x="10" y="74" width="394" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="1" green="0.99586412274157754" blue="0.98492571875090873" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RAW-UN-TfN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="Akx-wN-xPY"/>
+                            <constraint firstItem="0Or-p7-BrB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="CGG-EO-poT"/>
+                            <constraint firstItem="RAW-UN-TfN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="O2U-fX-u90"/>
+                            <constraint firstItem="0Or-p7-BrB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="aiD-tp-fnP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Or-p7-BrB" secondAttribute="trailing" constant="10" id="cGd-kE-W1O"/>
+                            <constraint firstItem="9Vy-C7-hd4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="140" id="fPm-WP-g9q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RAW-UN-TfN" secondAttribute="trailing" constant="10" id="qoQ-U4-NL3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Vy-C7-hd4" secondAttribute="trailing" constant="140" id="vFN-nW-Lvc"/>
+                            <constraint firstItem="9Vy-C7-hd4" firstAttribute="top" secondItem="0Or-p7-BrB" secondAttribute="bottom" constant="50" id="vpE-u2-9M7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailIdTF" destination="gc9-b4-2IU" id="ajW-Bq-g0Y"/>
+                        <outlet property="employeeIdTF" destination="Shf-pL-qQM" id="XzC-gZ-LQ9"/>
+                        <outlet property="lastNameTF" destination="Ptd-32-fxz" id="CQk-jn-SHY"/>
+                        <outlet property="phoneNumberTF" destination="VCS-b3-dBl" id="fTU-hz-VFF"/>
+                        <outlet property="userNameTF" destination="QUp-yl-RGy" id="bRI-8X-F7P"/>
+                        <segue destination="LLp-i8-c2y" kind="show" identifier="showRecords" id="Rmc-dv-2JD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="12" y="73"/>
+        </scene>
+        <!--Show RecordsVC-->
+        <scene sceneID="vKd-L7-NIk">
+            <objects>
+                <viewController id="LLp-i8-c2y" customClass="ShowRecordsVC" customModule="RealmApp2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b0d-Sx-I3N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tLg-Ts-09Z">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dUo-zy-eWa">
+                                    <size key="itemSize" width="200" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecordCell" id="VBR-K3-Nt5" customClass="RecordCell" customModule="RealmApp2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wFw-R5-hQG">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bXO-Ak-hFs">
+                                                    <rect key="frame" x="8" y="5" width="187" height="190"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="le0-BK-7rF">
+                                                            <rect key="frame" x="0.0" y="0.0" width="187" height="50"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWz-lr-QC1">
+                                                            <rect key="frame" x="0.0" y="55" width="187" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sr-HP-RX1">
+                                                            <rect key="frame" x="0.0" y="77" width="187" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee Id : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrR-hy-u4X">
+                                                            <rect key="frame" x="0.0" y="99" width="187" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uO3-lH-A7d">
+                                                            <rect key="frame" x="0.0" y="121" width="187" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Id: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SzC-R7-lo0">
+                                                            <rect key="frame" x="0.0" y="143" width="187" height="47"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="bXO-Ak-hFs" secondAttribute="bottom" constant="5" id="9Hk-gU-AU3"/>
+                                                <constraint firstItem="uO3-lH-A7d" firstAttribute="top" secondItem="wFw-R5-hQG" secondAttribute="top" constant="126" id="D5h-Uo-JB1"/>
+                                                <constraint firstAttribute="trailing" secondItem="bXO-Ak-hFs" secondAttribute="trailing" constant="5" id="JjW-ai-iKV"/>
+                                                <constraint firstItem="bXO-Ak-hFs" firstAttribute="leading" secondItem="wFw-R5-hQG" secondAttribute="leading" constant="8" id="V94-mF-nIR"/>
+                                                <constraint firstItem="qWz-lr-QC1" firstAttribute="top" secondItem="wFw-R5-hQG" secondAttribute="top" constant="60" id="Y61-cb-GzU"/>
+                                                <constraint firstItem="2sr-HP-RX1" firstAttribute="top" secondItem="wFw-R5-hQG" secondAttribute="top" constant="82" id="cim-1n-lAu"/>
+                                                <constraint firstItem="bXO-Ak-hFs" firstAttribute="top" secondItem="wFw-R5-hQG" secondAttribute="top" constant="5" id="mtP-ZZ-vxz"/>
+                                                <constraint firstItem="vrR-hy-u4X" firstAttribute="top" secondItem="wFw-R5-hQG" secondAttribute="top" constant="104" id="rlM-wq-Yok"/>
+                                                <constraint firstItem="SzC-R7-lo0" firstAttribute="top" secondItem="wFw-R5-hQG" secondAttribute="top" constant="148" id="tSZ-OQ-WJO"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="customSize" width="200" height="200"/>
+                                        <connections>
+                                            <outlet property="emailId" destination="SzC-R7-lo0" id="2AT-g5-3zm"/>
+                                            <outlet property="employeeId" destination="vrR-hy-u4X" id="Chd-Fr-JgT"/>
+                                            <outlet property="lastname" destination="2sr-HP-RX1" id="exv-aE-Sch"/>
+                                            <outlet property="phoneNumber" destination="uO3-lH-A7d" id="tgp-wm-vPT"/>
+                                            <outlet property="userName" destination="qWz-lr-QC1" id="vDN-sP-J7u"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="LLp-i8-c2y" id="8c4-Tt-U6W"/>
+                                    <outlet property="delegate" destination="LLp-i8-c2y" id="Ijz-BS-yne"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="X3h-JD-wN3" firstAttribute="bottom" secondItem="tLg-Ts-09Z" secondAttribute="bottom" id="6gD-XE-seP"/>
+                            <constraint firstItem="tLg-Ts-09Z" firstAttribute="top" secondItem="X3h-JD-wN3" secondAttribute="top" id="ExO-b2-VP0"/>
+                            <constraint firstItem="tLg-Ts-09Z" firstAttribute="leading" secondItem="X3h-JD-wN3" secondAttribute="leading" id="n5Q-7L-fvT"/>
+                            <constraint firstItem="X3h-JD-wN3" firstAttribute="trailing" secondItem="tLg-Ts-09Z" secondAttribute="trailing" id="wg2-2f-Rrc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="X3h-JD-wN3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="k40-F3-WhU"/>
+                    <connections>
+                        <outlet property="recordsCollectionView" destination="tLg-Ts-09Z" id="Y7g-cd-WTk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cXV-2K-bYN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="795.6521739130435" y="72.991071428571431"/>
         </scene>
     </scenes>
 </document>
